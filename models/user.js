@@ -27,8 +27,9 @@ exports.getById = function(id, next) {
 };
 
 // Retrieving just ONE user based on a query (first one)
+//if <find>, it would return array of objects even if one only
 exports.getOne = function(query, next) {
   User.findOne(query, function(err, user) {
-    next(err, user);
+    next(err, user); //returns 1 document only 
   });
 };
